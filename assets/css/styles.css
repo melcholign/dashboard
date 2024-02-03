@@ -3,19 +3,106 @@
     margin: 0px;
 }
 
+:root {
+    --sidebar-link-font-size: 1.2rem;
+}
+
 body {
     height: 100vh;
     display: grid;
     /* 200px is a placeholder value */
-    grid-template-columns: 200px 1fr;
+    grid-template-columns: 250px 1fr;
     grid-template-rows: 200px 1fr;
 }
 
 /* helper rule */
-body * {
+/* body * {
     border: 2px solid black;
-}
+} */
 
 .sidebar {
+    padding: 20px;
+    border-right: 2px solid black;
     grid-row: 1 / 3;
+    display: grid;
+    align-content: start;
+    row-gap: 50px;
+}
+
+.sidebar h1,
+.sidebar a {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    align-items: center;
+}
+
+.sidebar h1 {
+    column-gap: 5px;
+}
+
+.sidebar h1::before {
+    content: url(../icons/sidebar/dashboard.svg);
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.sidebar nav {
+    font-size: var(--sidebar-link-font-size);
+}
+
+.sidebar ul {
+    list-style-type: none;
+}
+
+.sidebar a {
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+    column-gap: 15px;
+}
+
+.sidebar li + li {
+    margin-top: 15px;
+}
+
+.sidebar a::before {
+    width: var(--sidebar-link-font-size);
+    height: var(--sidebar-link-font-size);
+    margin-left: 10px;
+}
+
+.sidebar .home::before {
+    content: url(../icons/sidebar/home.svg);
+}
+
+.sidebar .profile::before {
+    content: url(../icons/sidebar/profile.svg);
+}
+
+.sidebar .messages::before {
+    content: url(../icons/sidebar/messages.svg);
+}
+
+.sidebar .history::before {
+    content: url(../icons/sidebar/history.svg);
+}
+
+.sidebar .tasks::before {
+    content: url(../icons/sidebar/tasks.svg);
+}
+
+.sidebar .communities::before {
+    content: url(../icons/sidebar/communities.svg);
+}
+
+.sidebar .settings::before {
+    content: url(../icons/sidebar/settings.svg);
+}
+
+.sidebar .support::before {
+    content: url(../icons/sidebar/support.svg);
+}
+
+.sidebar .privacy::before {
+    content: url(../icons/sidebar/privacy.svg);
 }
