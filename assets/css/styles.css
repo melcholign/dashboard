@@ -2,3 +2,20 @@
     padding: 0px;
     margin: 0px;
 }
+
+body {
+    height: 100vh;
+    display: grid;
+    /* 200px is a placeholder value */
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: 200px 1fr;
+}
+
+/* helper rule */
+body * {
+    border: 2px solid black;
+}
+
+.sidebar {
+    grid-row: 1 / 3;
+}
