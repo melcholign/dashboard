@@ -11,12 +11,16 @@
 }
 
 :root {
+    --header-bg-clr: #2F845E;
     --sidebar-link-font-size: 1.2rem;
-    --sidebar-bg-clr: #1992D4;
-    --main-bg-clr: #E2E8F0;
-    --main-p-fnt-clr: #636363;
+    --sidebar-bg-clr: #3FB984;
+    --card-major-txt-clr: #3FB984;
+    --card-border-clr: #3FB984;
+    --main-bg-clr: #31475E;
+    --generic-fnt-clr: #e2e8f0;
     --main-p-fnt-size: 0.9rem;
-    --card-shadow-clr: #D0D5DC; 
+    --card-bg-clr: #1e293b;
+    --card-shadow-clr: #283b4e94; 
 }
 
 * {
@@ -67,17 +71,22 @@ main {
 }
 
 main section h2 {
+    color: white;
     margin-bottom: 10px;
 }
 
 main .card {
-    background-color: white;
+    background-color: var(--card-bg-clr);
     box-shadow: 2px 3px 5px 3px var(--card-shadow-clr);
+}
+
+main .card h3 {
+    color: var(--card-major-txt-clr);
 }
 
 main p {
     font-size: var(--main-p-fnt-size);
-    color: var(--main-p-fnt-clr);
+    color: var(--generic-fnt-clr);
 }
 
 .announcement .card,
@@ -108,7 +117,7 @@ main p {
     box-sizing: border-box;
     width: 100%;
     height: 200px;
-    border-left: 10px solid gold;
+    border-left: 10px solid var(--card-border-clr);
     border-radius: 10px;
     padding: 30px 20px;
 }
@@ -142,7 +151,7 @@ main p {
     padding-bottom: 10px;
     display: grid;
     grid-template-rows: auto auto;
-    gap: 5px;
+    gap: 10px;
 }
 
 .announcement .segment:last-child {
@@ -155,10 +164,11 @@ main p {
 
 .trending .card {
     grid-template-rows: repeat(4, auto);
+    gap: 15px;
 }
 
 .trending .segment {
-    gap: 10px;
+    gap: 20px;
 }
 
 .trending img {
@@ -168,14 +178,17 @@ main p {
 }
 
 .trending .segment p:first-child {
-    color: black;
+    margin-bottom: 5px;
+    color: var(--card-major-txt-clr);
 }
 
 /* header */
 
 header {
+    background-color: var(--header-bg-clr);
     padding: 15px 50px;
     box-shadow: 0px 5px 6px 3px var(--card-shadow-clr);
+    color: var(--generic-fnt-clr, white);
 }
 
 header>div {
@@ -201,11 +214,17 @@ header>div {
 }
 
 .search-bar input {
-    height: 1.5rem;
-    border: none;
+    height: 2.5rem;
+    border: 5px solid var(--header-bg-clr);
     border-radius: 20px;
     padding: 0.2rem 1rem;
     background-color: var(--main-bg-clr);
+    color: white;
+    caret-color: white;
+}
+
+.search-bar input:focus {
+    outline: 2px solid white;
 }
 
 .top img {
@@ -228,6 +247,7 @@ header>div {
 }
 
 .top .name {
+    color: var(--generic-fnt-clr);
     font-size: 1rem;
     font-weight: bold;
 }
